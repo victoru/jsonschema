@@ -629,7 +629,9 @@ def _types_msg(instance, types):
             reprs.append(repr(type["name"]))
         except Exception:
             reprs.append(repr(type))
-    return "%r is not of type %s" % (instance, ", ".join(reprs))
+
+    msg = "%r is not a valid type" % instance
+    return dict(msg=msg, valid_types=types)
 
 
 def _flatten(suitable_for_isinstance):
