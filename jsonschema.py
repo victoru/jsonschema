@@ -609,7 +609,7 @@ def _extras_msg(extras):
         verb = "was"
     else:
         verb = "were"
-    return ", ".join(repr(extra) for extra in extras), verb
+    return ", ".join(extra.encode('utf8') for extra in extras), verb
 
 
 def _types_msg(instance, types):
